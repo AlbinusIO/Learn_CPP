@@ -2,26 +2,33 @@
 #include <string>
 using namespace std;
 
-struct Tanggal {
-    int hari, bulan, tahun;
+struct Weapon {
+    string nama;
+    int attackPower;
 };
 
-struct Mahasiswa {
+struct Character {
     string nama;
-    int nim;
-    Tanggal lahir;
+    string kelas;
+    int level;
+    int hp, mp;
+    Weapon senjata;
 };
 
 int main() {
-    Mahasiswa mhs;
-    cout << "Nama: "; getline(cin, mhs.nama);
-    cout << "NIM : "; cin >> mhs.nim;
-    cout << "Tanggal Lahir (dd mm yyyy): ";
-    cin >> mhs.lahir.hari >> mhs.lahir.bulan >> mhs.lahir.tahun;
+    Character hero;
+    hero.nama = "Invoker";
+    hero.kelas = "Mages";
+    hero.level = 11;
+    hero.hp = 500;
+    hero.mp = 150;
+    hero.senjata = {"Cold Snap, Chaos Meteor, and Sun Strike", 40};
 
-    cout << "\nData Mahasiswa\n";
-    cout << "Nama : " << mhs.nama << endl;
-    cout << "NIM  : " << mhs.nim << endl;
-    cout << "Lahir: " << mhs.lahir.hari << "/" 
-         << mhs.lahir.bulan << "/" << mhs.lahir.tahun << endl;
+    cout << "=== Data Hero Dota2 ===\n";
+    cout << "Nama   : " << hero.nama << endl;
+    cout << "Kelas  : " << hero.kelas << endl;
+    cout << "Level  : " << hero.level << endl;
+    cout << "HP/MP  : " << hero.hp << "/" << hero.mp << endl;
+    cout << "Senjata: " << hero.senjata.nama 
+         << " (Attack Power: " << hero.senjata.attackPower << ")\n";
 }
