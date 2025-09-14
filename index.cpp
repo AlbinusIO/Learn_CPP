@@ -1,17 +1,39 @@
 #include <iostream>
 using namespace std;
 
-struct mahasiswa{
-  string nama;
-  string alamat;
-  int usia;
-};
+int main() {
+    int A[2][2], B[2][2], C[2][2];
 
-int main(){
-  mahasiswa mhs1;
-  mhs1.nama = "joni";
-  mhs1.alamat = "Jl.mawar";
-  mhs1.usia = 19;
+    cout << "Masukkan elemen matriks A (2x2):\n";
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<2; j++) {
+            cin >> A[i][j];
+        }
+    }
 
-  cout << "nama: " << mhs1.nama << endl;
+    cout << "Masukkan elemen matriks B (2x2):\n";
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<2; j++) {
+            cin >> B[i][j];
+        }
+    }
+
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<2; j++) {
+            C[i][j] = 0;
+            for (int k=0; k<2; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    cout << "Hasil perkalian matriks A x B:\n";
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<2; j++) {
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }

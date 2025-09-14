@@ -1,29 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int a, b, t, p, l;
-
 int main() {
-// Perhitungan Keliling Persegi Panajng
-  cout << "Keliling Persegi" << endl;
-  cout << "Panjang Persegi: ";
-  cin >> p;
-  cout << "Lebar Persegi: ";
-  cin >> l;
-  // rumus Luas= 2 x (p + l)
-  cout << "Hasil: " << (2 * (p + l)) << " cm" << endl;
+    int n;
+    cout << "Masukkan tinggi piramida: ";
+    cin >> n;
 
-// Perhitungan Luas Trapesium
-cout << "Luas Trapesium" << endl;
- cout << "Panjang Sisi a: ";
-  cin >> a;
-  cout << "Panjang Sisi b: ";
-  cin >> b;
-    cout << "Tinggi Trapesium: ";
-  cin >> t;
-  // rumus Luas= 2 x (p + l)
-  cout << "Hasil: " << 0.5 * (a + b) * t << " cm" <<endl;
-
-
-return 0;
+    for (int i = n; i >= 1; i--) {
+        for (int spasi = 1; spasi <= n-i; spasi++) {
+            cout << " ";
+        }
+        for (int bintang = 1; bintang <= 2*i-1; bintang++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
 }
