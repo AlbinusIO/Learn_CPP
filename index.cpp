@@ -1,11 +1,14 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int x = 3, y = 4;
-
-    x -= 1;
-    y += x * 5;
-
-    cout << y << endl;
+int main()
+{
+	for (int i =0; i < 1; i++){
+		cout << "ini dari for loop" << endl;
+	}
+	
+	int j = 0;
+	do{
+		cout << "ini dari do-while" << endl;
+	} while (j < 0);
 }
