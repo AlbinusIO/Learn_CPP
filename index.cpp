@@ -3,12 +3,21 @@ using namespace std;
 
 int main()
 {
-	for (int i =0; i < 1; i++){
-		cout << "ini dari for loop" << endl;
-	}
-	
-	int j = 0;
-	do{
-		cout << "ini dari do-while" << endl;
-	} while (j < 0);
+	int size;
+	cout << "ukuran";
+	cin >> size;
+	int i = 0;
+	do {
+		int j = 0;
+		do {
+			cout << "* ";
+			j++;
+		} while (j < size);
+		cout << endl;
+		i++;
+		
+		//if (i >= size) {
+			//break;
+	}while (true);
+	return 0;
 }
