@@ -1,27 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int rows;
+int main(){
+	
+	int A[2][3] = {
+	{1, 2, 3},
+	{2, 1, 3}
+};
 
-    cout << "Masukkan jumlah baris: ";
-    cin >> rows;
-
-    int i = rows;
-    // Perulangan utama untuk membuat baris
-    do {
-        int j = 1;
-        // Perulangan untuk mencetak bintang di setiap baris
-        do {
-            cout << "* ";
-            j++;
-			if (j > i) break;
-        } while (true);
-
-        // Pindah ke baris baru setelah satu baris selesai
-        cout << endl;
-        i--;
-    } while (i > 0);
-
-    return 0;
+	
+	for (int i = 0; i < 2; i++){
+		for (int j = 0; j < 3; j++){
+			cout << A[i][j] << " ";
+		}
+		cout << endl;
+	}
 }
