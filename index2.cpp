@@ -1,13 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int x, y;
+int main() {
+  int A[2][3];
+  for(int i=0; i<2; i++){
+    for(int j=0; j<3; j++){
+      cout << "Masukkan nilai: ";
+      cin >> A[i][j];
+    }
+  }
 
-int main(){
-	cout << "masukkan angka: ";
-    cin >> x;
-
-    cout << x << endl;
-	
-return 0;
+  cout << "\nIsi array:\n";
+  for(int i=0; i<2; i++){
+    for(int j=0; j<3; j++){
+      cout << A[i][j] << " ";
+    }
+    cout << endl;
+  }
 }

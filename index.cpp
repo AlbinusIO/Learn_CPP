@@ -1,18 +1,41 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-int main(){
-	
-	int A[2][3] = {
-	{1, 2, 3},
-	{2, 1, 3}
-};
+int main() {
+    double a, b;
+    char op;
 
-	
-	for (int i = 0; i < 2; i++){
-		for (int j = 0; j < 3; j++){
-			cout << A[i][j] << " ";
-		}
-		cout << endl;
-	}
+    cout << "Masukkan angka pertama: ";
+    if (!(cin >> a)) return 0; // validasi sederhana
+
+    cout << "Masukkan operator (+ - * /): ";
+    cin >> op;
+
+    cout << "Masukkan angka kedua: ";
+    if (!(cin >> b)) return 0;
+
+    cout << fixed << setprecision(6);
+
+    switch (op) {
+        case '+':
+            cout << "Hasil: " << a + b << '\n';
+            break;
+        case '-':
+            cout << "Hasil: " << a - b << '\n';
+            break;
+        case '*':
+            cout << "Hasil: " << a * b << '\n';
+            break;
+        case '/':
+            if (b != 0.0)
+                cout << "Hasil: " << a / b << '\n';
+            else
+                cout << "Error: pembagian dengan nol!" << '\n';
+            break;
+        default:
+            cout << "Operator tidak dikenal." << '\n';
+    }
+
+    return 0;
 }
