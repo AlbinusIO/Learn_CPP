@@ -1,46 +1,26 @@
 #include <iostream>
 using namespace std;
 
+float tambah(float a, float b) { return a + b; }
+float kurang(float a, float b) { return a - b; }
+float kali(float a, float b) { return a * b; }
+float bagi(float a, float b) { return a / b; }
+
 int main() {
-    char board[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
-    int turn = 0;
-    char player = 'X'; 
-    int row, col;
+    float x, y;
+    char op;
 
-    while(turn < 9) {
-        cout << "\nPapan Permainan:\n";
-        for(int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
-                cout << board[i][j];
-                if(j<2) cout << " | ";
-            }
-            cout << endl;
-            if(i<2) cout << "--+---+--\n";
-        }
+    cout << "Masukkan dua angka: ";
+    cin >> x >> y;
+    cout << "Pilih operasi (+ - * /): ";
+    cin >> op;
 
-        cout << "\nGiliran Pemain " << player << endl;
-        cout << "Masukkan baris (0-2): "; cin >> row;
-        cout << "Masukkan kolom (0-2): "; cin >> col;
-
-        // Validasi input
-        if(row < 0 || row > 2 || col < 0 || col > 2){
-            cout << "Input tidak valid! Coba lagi.\n";
-            continue;
-        }
-
-        if(board[row][col] == ' '){
-            board[row][col] = player;
-            turn++;
-        } else {
-            cout << "Kotak sudah terisi!\n";
-            continue;
-        }
-
-        // Ubah pemain
-        if(player == 'X') player = 'O';
-        else player = 'X';
+    switch (op) {
+        case '+': cout << "Hasil: " << tambah(x, y); break;
+        case '-': cout << "Hasil: " << kurang(x, y); break;
+        case '*': cout << "Hasil: " << kali(x, y); break;
+        case '/': cout << "Hasil: " << bagi(x, y); break;
+        default: cout << "Operasi tidak valid!"; break;
     }
-
-    cout << "\nPermainan selesai!\n";
     return 0;
 }

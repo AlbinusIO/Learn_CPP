@@ -1,20 +1,25 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-  int A[2][3];
-  for(int i=0; i<2; i++){
-    for(int j=0; j<3; j++){
-      cout << "Masukkan nilai: ";
-      cin >> A[i][j];
-    }
-  }
+float toFahrenheit(float c) { return (c * 9/5) + 32; }
+float toKelvin(float c) { return c + 273.15; }
+float toReamur(float c) { return c * 4/5; }
 
-  cout << "\nIsi array:\n";
-  for(int i=0; i<2; i++){
-    for(int j=0; j<3; j++){
-      cout << A[i][j] << " ";
+int main() {
+    float c;
+    int pilihan;
+
+    cout << "Masukkan suhu dalam Celcius: ";
+    cin >> c;
+    cout << "Pilih konversi:\n1. Fahrenheit\n2. Kelvin\n3. Reamur\nPilihan: ";
+    cin >> pilihan;
+
+    switch (pilihan) {
+        case 1: cout << "Hasil: " << toFahrenheit(c) << " °F"; break;
+        case 2: cout << "Hasil: " << toKelvin(c) << " K"; break;
+        case 3: cout << "Hasil: " << toReamur(c) << " °R"; break;
+        default: cout << "Pilihan tidak valid!";
     }
-    cout << endl;
-  }
+
+    return 0;
 }

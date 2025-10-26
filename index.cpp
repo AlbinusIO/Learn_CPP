@@ -1,41 +1,35 @@
 #include <iostream>
-#include <iomanip>
+#include <string>
 using namespace std;
 
-int main() {
-    double a, b;
-    char op;
-
-    cout << "Masukkan angka pertama: ";
-    if (!(cin >> a)) return 0; // validasi sederhana
-
-    cout << "Masukkan operator (+ - * /): ";
-    cin >> op;
-
-    cout << "Masukkan angka kedua: ";
-    if (!(cin >> b)) return 0;
-
-    cout << fixed << setprecision(6);
-
-    switch (op) {
-        case '+':
-            cout << "Hasil: " << a + b << '\n';
-            break;
-        case '-':
-            cout << "Hasil: " << a - b << '\n';
-            break;
-        case '*':
-            cout << "Hasil: " << a * b << '\n';
-            break;
-        case '/':
-            if (b != 0.0)
-                cout << "Hasil: " << a / b << '\n';
-            else
-                cout << "Error: pembagian dengan nol!" << '\n';
-            break;
-        default:
-            cout << "Operator tidak dikenal." << '\n';
+string encrypt(string text, int key) {
+    for (int i = 0; i < text.length(); i++) {
+        text[i] = text[i] + key;
     }
+    return text;
+}
+
+string decrypt(string text, int key) {
+    for (int i = 0; i < text.length(); i++) {
+        text[i] = text[i] - key;
+    }
+    return text;
+}
+
+int main() {
+    string teks;
+    int key;
+
+    cout << "Masukkan teks: ";
+    cin >> teks;
+    cout << "Masukkan kunci: ";
+    cin >> key;
+
+    string encrypted = encrypt(teks, key);
+    string decrypted = decrypt(encrypted, key);
+
+    cout << "Hasil enkripsi: " << encrypted << endl;
+    cout << "Hasil dekripsi: " << decrypted << endl;
 
     return 0;
 }
