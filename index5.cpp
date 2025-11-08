@@ -1,23 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int arr[3][3] = {
-        {5, 12, 7},
-        {9, 3, 15},
-        {4, 8, 10}
-    };
+int main(){
+	for (int i = 1; i <= 10; i++) {
+		
+    cout << "awal iterasi " << i << endl;
 
-    int maxVal = arr[0][0];
+    // ilustrasi perintah continue
+    if (i % 2 == 0) {
+        cout << "    iterasi dihentikan!" << endl;
+        continue;
 
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
-            if(arr[i][j] > maxVal){
-                maxVal = arr[i][j];
-            }
-        }
+        // sebelum iterasi dihentikan,
+        // perintah i++ akan tetap dijalankan
     }
 
-    cout << "hasil: " << maxVal << endl;
-    return 0;
-}
+    cout << "    halo dunia" << endl;
+} 
